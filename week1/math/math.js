@@ -1,19 +1,26 @@
 //addition
-export default function add(){
-
+const add = (num1,num2) =>{
+ return num1 + num2
 }
 
 //subtraction
-export default function sub(){
-
+const sub = (num1,num2) =>{
+    return num1 - num2
 }
 
 //multiplication 
-export default function multi(){
-
+const multi = (num1,num2) =>{
+    return num1 * num2
 }
 
 //division
-export default function div(){
-    
+const div = (num1,num2) =>{
+    return num1 / num2
+}
+module.exports = {
+    add,
+    sub,
+    multi,
+    div
+
 }
