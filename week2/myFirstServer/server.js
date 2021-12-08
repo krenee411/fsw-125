@@ -27,9 +27,9 @@ app.get('/partyPosition', (req,res) =>{
 });
 
 let mapLocation =[
-    {location: 'Encampment', community: 'Party Camp'},
+    {location: 'Camp', community: 'Party Camp'},
     {location: 'Renagon', community: 'Elven Village'},
-    {location: 'Templar Castel', community: 'Kights Guild Hall'},
+    {location: 'Templar Castel', fitcommunity: 'Kights Guild Hall'},
     {location: 'Guiding Light Church', community:'Healer Community'},
     {location: 'Shadow Gathering', community: 'Rouge Hideout'},
     {location: 'Tower of Light', community: 'Mage Magic Console'}
