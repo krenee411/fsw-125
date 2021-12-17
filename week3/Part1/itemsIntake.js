@@ -12,7 +12,6 @@ let recycledItems = [
     {recycledObject : "Cardboard box"},
     {recycledObject : "Soda can"},
     {recycledObject : "Soup can"},
-    {recycledObject : "Plastic bag"},
     {recycledObject : "Paper"}
 ]
 
