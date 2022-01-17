@@ -2,12 +2,12 @@ import { useState } from "react"
 
 export default function AddForm({addData, btnTx, showName, mainCharacter, genre, episodes,  id}){
 
-    const ogdata = {showName: showName || '', mainCharacter: mainCharacter || '', genre: genre || '', episodes: episodes || ''}
+    const ogdata = {showName: showName || '', mainCharacter: mainCharacter || '', genre: genre || '', episodes: episodes || '' }
     const [formInput, setFormInput] = useState(ogdata)
 
     const onChangeData = (e) => {
-        const {showName,value} = e.target
-        setFormInput(data => ({...data, [showName]:value}))
+        const {name,value} = e.target
+        setFormInput(data => ({...data, [name]:value}))
     }
 
     const handleSubmit = (e) => {
@@ -19,7 +19,7 @@ export default function AddForm({addData, btnTx, showName, mainCharacter, genre,
         <form onSubmit={handleSubmit}>
             <input
                 type = 'text'
-                name = 'showName'
+                name="showName"
                 value = {formInput.showName}
                 placeholder="Show Name"
                 onChange = {onChangeData}
@@ -27,7 +27,7 @@ export default function AddForm({addData, btnTx, showName, mainCharacter, genre,
 
             <input
                 type = 'text'
-                name = 'mainCharacter'
+                name="mainCharacter"
                 value = {formInput.mainCharacter}
                 placeholder="Main Character Name"
                 onChange = {onChangeData}
@@ -35,7 +35,7 @@ export default function AddForm({addData, btnTx, showName, mainCharacter, genre,
 
             <input
                 type = 'text'
-                name = 'genre'
+                name="genre"
                 value = {formInput.genre}
                 placeholder="Show Genre"
                 onChange = {onChangeData}
@@ -43,7 +43,7 @@ export default function AddForm({addData, btnTx, showName, mainCharacter, genre,
 
             <input
                 type = 'number'
-                name = 'episodes'
+                name="episodes"
                 value = {formInput.episodes}
                 placeholder="Number of episodes"
                 onChange = {onChangeData}

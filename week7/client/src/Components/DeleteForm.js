@@ -1,5 +1,5 @@
 import { useState } from "react"
-import AddForm from "./AddForm"
+import EditForm from "./EditForm"
 
 export default function DeleteForm({deleteData, editData, id, showName}){
     const [toggle, setToggle] = useState(false)
@@ -22,7 +22,7 @@ console.log(showName)
             </>
             :
             <>
-                <AddForm
+                <EditForm
                     showName={showName}
                     id={id}
                     editData={editData}

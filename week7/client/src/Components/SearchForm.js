@@ -1,12 +1,16 @@
+import axios from "axios";
+import { useState } from "react";
 
-export default function SearchForm({showName, mainCharacter, synopsis, onGoing, genre, episodes}){
+export default function SearchForm(){
+// do i have to put my input form in a function to make it show up when its clicked?
 
+const [getData, setGetData] = useState([])
 
     const getShow= () => {
         const searchTitle = document.querySelector("#input").value;
-
-    fetch(`http://localhost:9000/dataArray/search/showName?showName=${searchTitle}`)
-        .then(res => res.json())
+        console.log(searchTitle)
+    axios.get(`http://localhost:9000/dataArray/search/showName?showName=${searchTitle}`)
+        .then(res => setGetData(res.data))
         .catch(err => console.log(err))
     
     }
@@ -19,13 +23,20 @@ export default function SearchForm({showName, mainCharacter, synopsis, onGoing, 
                         id='input'
                     />
                     <button onClick={getShow}>Search</button>
-                <div>
-                    <h1>Title:{showName}</h1>
-                    <h2>Main Character:{mainCharacter}</h2>
-                    <h3>Synopsis:{synopsis}</h3>
-                    <h3>Genre:{genre}, Number of Episodes:{episodes}</h3>
-                    <h4>Ongoing:{onGoing}</h4>
-                </div>
+                   {getData.map((show)=>{
+                    return(
+                        <div>
+                            <h1>Title: {show.showName} </h1>
+                            <h2>Main Character: {show.mainCharacter} </h2>
+                            <h3>Synopsis: {show.synopsis}</h3>
+                            <h3>Genre: {show.genre} , Number of Episodes:{show.episodes}</h3>
+                            <h4>Ongoing: {show.onGoing.toString()}</h4>
+                        </div>
+                     )
+                   })
+
+                    }
+               
             </div>
         </>
     )

@@ -12,7 +12,7 @@ function App() {
   const getList = () => {
     axios.get('/dataArray')
     .then(res => setDataArray(res.data))
-    .catch(err => console.log(err))
+    .catch(err => console.log(err.response.data.errMsg))
   }
 
   //post-add new data
@@ -60,7 +60,8 @@ function App() {
         btnTx='Add Item'
       />
        {mapData}
-       <SearchForm/>
+       <SearchForm
+       />
     </div>
   );
 }
